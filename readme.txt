@@ -1,7 +1,4 @@
 ﻿Git is a version control system.
 Git is free software.
 Git is a distributed version control system.
-Git is free software.
-git has a mutable index call stage 
-git track changes
-creating a new branch is quick
+Git is free software
