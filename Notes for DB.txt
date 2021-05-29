@@ -1,0 +1,27 @@
+
+建立一个“学生表“，存在学生名字，学号，性别，年龄，系名，要求是学生学号是主码，学生名字取唯一值。
+create table Student(
+Sno char(10) primary key,
+Sname char(20) unique,
+Ssex char(5),
+Sage smallint,
+Sdept char(10));
+
+建立一个“课程表”，存在课程号，课程名，课程先修课，学分，要求课程号是主码，课程名字不得为空，课程先修课参照的是课程号
+create table Course(
+Cno char(5) primary key,
+Cname char(10) not null,
+Cpno char(5),
+Ccredit smallint 
+foreign key Cpon references Course(Cno));
+
+建立一个“选课表”，存在学号，课程号，学生成绩，其中学号和课程号是主码，学号参照学生表的学生学号，课程号参照课程表课程号
+create table SC(
+Cno char(5),
+Sno char(5),
+Grade smallint,
+primary key(Cno, Sno),
+foreign key Cno references Course(Cno),
+foreign key Sno references Student(Sno));
+
+
